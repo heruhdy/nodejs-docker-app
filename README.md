@@ -49,7 +49,7 @@ cd nodejs-docker-app
 
 ### Build the Docker image
 ```bash
-docker build -t nodejs-docker-app:1.0 .
+docker compose up -d --build
 ```
 
 ### Run the container
