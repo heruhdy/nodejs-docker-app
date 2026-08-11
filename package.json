@@ -4,7 +4,8 @@
   "description": "Simple Node.js application running with Docker",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node --test"
   },
   "dependencies": {
     "express": "^5.1.0"

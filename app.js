@@ -4,12 +4,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.json({
-        message: "Hello from Node.js Docker!",
-        status: "success"
-    });
+  res.json({
+    message: "Hello from Node.js Docker!",
+    status: "success",
+  });
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+if (require.main === module) {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on port ${PORT}`);
-});
+  });
+}
+
+module.exports = app;
