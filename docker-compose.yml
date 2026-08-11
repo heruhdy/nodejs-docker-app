@@ -1,0 +1,22 @@
+services:
+  app:
+    image: nodejs-docker-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs-docker-app
+    ports:
+      - "${PORT:-3000}:3000"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3000', res => process.exit(res.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
