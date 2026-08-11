@@ -24,6 +24,6 @@ test("GET / returns successful response", async (t) => {
 
   assert.deepEqual(body, {
     message: "Hello from Node.js Docker!",
-    status: "failed",
+    status: "success",
   });
 });
