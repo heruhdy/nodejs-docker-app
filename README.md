@@ -1,16 +1,18 @@
 # Node.js Docker App
 
-A simple Node.js application running inside a Docker container.
+A simple Node.js REST API containerized with Docker.
 
-## Technologies
+This project was created as a hands-on exercise to learn Git, GitHub, Node.js, and Docker.
 
-- Node.js
+## 🚀 Technologies
+
+- Node.js 22
 - Express.js
 - Docker
 - Git
 - GitHub
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 nodejs-docker-app/
@@ -22,28 +24,15 @@ nodejs-docker-app/
 └── README.md
 ```
 
-## How to Run
+## ⚙️ Application
 
-### Build the Docker image:
+The application exposes a simple HTTP endpoint:
 
-```bash
-docker build -t nodejs-docker-app:1.0 .
+```http
+GET /
 ```
 
-### Run the container:
-
-```bash
-docker run -d --name nodejs-docker-app -p 3000:3000 nodejs-docker-app:1.0 
-```
-### Access the Application
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-The application returns:
+Response:
 ```json
 {
   "message": "Hello from Node.js Docker!",
@@ -51,7 +40,44 @@ The application returns:
 }
 ```
 
-## Docker Container
+## 🐳 Run with Docker
+### Clone the repository
+```bash
+git clone git@github.com:heruhdy/nodejs-docker-app.git
+cd nodejs-docker-app
+```
+
+### Build the Docker image
+```bash
+docker build -t nodejs-docker-app:1.0 .
+```
+
+### Run the container
+```bash
+docker run -d --name nodejs-docker-app -p 3000:3000 nodejs-docker-app:1.0
+```
+
+### Test the application
+
+Open:
+```text
+http://localhost:3000
+```
+
+Or use:
+```bash
+curl http://localhost:3000
+```
+
+Expected response:
+```json
+{
+  "message": "Hello from Node.js Docker!",
+  "status": "success"
+}
+```
+
+## 🔍 Docker Commands
 
 ### Check running containers:
 ```bash
@@ -72,3 +98,16 @@ docker stop nodejs-docker-app
 ```bash
 docker rm nodejs-docker-app
 ```
+
+## 🎯 Learning Objectives
+
+This project demonstrates:
+
+- Basic Node.js application development
+- Express.js HTTP server
+- Docker image creation
+- Docker container management
+- Port mapping
+- Git version control
+- GitHub repository management
+- SSH authentication with GitHub
